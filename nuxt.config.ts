@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   css: ['~/assets/main.css'],
   modules: [
     '@vite-pwa/nuxt',
+    '@vueuse/nuxt',
   ],
   pwa: {
     manifest: {
