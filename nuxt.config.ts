@@ -9,7 +9,8 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/main.css'],
   modules: [
-    '@vite-pwa/nuxt'
+    '@vite-pwa/nuxt',
+    '@nuxtjs/eslint-module',
   ],
   pwa: {
     manifest: {
