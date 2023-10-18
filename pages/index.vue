@@ -1,9 +1,11 @@
-<script lang="ts" setup></script>
+<script setup lang="ts">
+import { reactive } from 'vue';
+import { useBattery } from '@vueuse/core';
+
+const battery = reactive(useBattery());
+const text = JSON.stringify(battery);
+</script>
+
 <template>
-  <div>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto neque
-    aliquid commodi? Quidem expedita harum molestias eaque magnam. Illo sit,
-    nulla laudantium sequi molestiae exercitationem suscipit aspernatur! Rerum,
-    magni fugit.
-  </div>
+  <pre lang="yaml">{{ text }}</pre>
 </template>

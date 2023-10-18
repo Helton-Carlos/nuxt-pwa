@@ -1,10 +1,20 @@
 <script lang="ts" setup>
+import { useVibrate } from '@vueuse/core';
+
+const { vibrate, stop, isSupported } = useVibrate({ pattern: [300, 100, 300] });
+
 const user = ref({
   username: '',
   password: '',
 });
 
-const login = async () => {};
+const login = () => {
+  user.value.username && user.value.password ? alert('true') : vibrate();
+
+  setTimeout(() => {
+    alert('fim');
+  }, 1000);
+};
 </script>
 
 <template>
