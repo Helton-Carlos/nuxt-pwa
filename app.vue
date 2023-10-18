@@ -1,7 +1,13 @@
+<script lang="ts" setup>
+import Header from './layouts/header-nuxt.vue';
+</script>
+
 <template>
   <div>
     <VitePwaManifest />
-    <NuxtPage></NuxtPage>
-    <button class="bg-black text-white px-4 py-2 rounded-md">PWA</button>
+    <Header />
+    <div class="container">
+      <NuxtPage></NuxtPage>
+    </div>
   </div>
 </template>

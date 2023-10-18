@@ -1,14 +1,9 @@
-<script lang="ts" setup>
-const router = [
-  { name: 'home', path: '/' },
-  { name: 'about', path: '/about' },
-  { name: 'login', path: '/login' },
-];
-</script>
+<script lang="ts" setup></script>
 <template>
-  <ul class="flex gap-2">
-    <li v-for="(routes, index) in router" :key="index">
-      <nuxt-link :to="routes.path"> {{ routes.name }}</nuxt-link>
-    </li>
-  </ul>
+  <div>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto neque
+    aliquid commodi? Quidem expedita harum molestias eaque magnam. Illo sit,
+    nulla laudantium sequi molestiae exercitationem suscipit aspernatur! Rerum,
+    magni fugit.
+  </div>
 </template>

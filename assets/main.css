@@ -6,4 +6,13 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  @apply bg-gray-base;
+}
+
+.container {
+  @apply w-4/5 m-auto pt-2
+}
+
+.btn {
+  @apply bg-primary text-white px-5 py-2 m-2 rounded-md;
 }
