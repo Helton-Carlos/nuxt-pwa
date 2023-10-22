@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
-import { useBattery } from '@vueuse/core';
-
-const battery = reactive(useBattery());
-const text = JSON.stringify(battery);
+const mainImage = ref<string>('../assets/icons/main.png');
 </script>
 
 <template>
-  <pre lang="yaml">{{ text }}</pre>
+  <div class="w-full">
+    <img :src="mainImage" alt="main" />
+  </div>
 </template>
