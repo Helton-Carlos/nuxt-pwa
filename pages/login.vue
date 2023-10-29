@@ -12,8 +12,8 @@ const login = () => {
   user.value.username && user.value.password ? alert('true') : vibrate();
 
   setTimeout(() => {
-    alert('fim');
-  }, 1000);
+    stop();
+  }, 2000);
 };
 </script>
 

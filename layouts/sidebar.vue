@@ -6,7 +6,7 @@ const router = [
 ];
 </script>
 <template>
-  <div class="absolute top-0 z-10 w-[330px] h-full px-1 bg-white shadow">
+  <div class="absolute top-0 z-10 w-[330px] h-full px-1 bg-white shadow-lg">
     <div class="container">
       <div class="flex items-center gap-2">
         <img src="../assets/icons/logo.png" alt="logo" />
