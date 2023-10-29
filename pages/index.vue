@@ -1,9 +1,7 @@
-<script setup lang="ts">
-const mainImage = ref<string>('../assets/icons/main.png');
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div class="w-full">
-    <img :src="mainImage" alt="main" />
+  <div>
+    <img class="w-full py-2" src="~/assets/icons/main.png" alt="main" />
   </div>
 </template>

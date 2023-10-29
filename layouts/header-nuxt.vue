@@ -1,11 +1,10 @@
 <script lang="ts" setup>
-const openMenu = ref<boolean>(false);
+import sidebar from './sidebar.vue';
+const menu = ref<boolean>(false);
 
-const router = [
-  { name: 'home', path: '/' },
-  { name: 'about', path: '/about' },
-  { name: 'login', path: '/login' },
-];
+function openMenu() {
+  menu.value = !menu.value;
+}
 </script>
 
 <template>
@@ -19,19 +18,13 @@ const router = [
 
         <div class="flex items-center gap-2">
           <img src="../assets/icons/notification.png" alt="notification" />
-          <img src="../assets/icons/menu.png" alt="menu" />
+          <img src="../assets/icons/menu.png" alt="menu" @click="openMenu" />
         </div>
       </div>
-
-      <ul class="p-2 gap-2" v-if="openMenu">
-        <li
-          v-for="(routes, index) in router"
-          :key="index"
-          class="font-semibold"
-        >
-          <nuxt-link :to="routes.path">{{ routes.name }}</nuxt-link>
-        </li>
-      </ul>
     </header>
+
+    <div>
+      <sidebar v-if="menu" @click="openMenu" />
+    </div>
   </div>
 </template>
