@@ -11,8 +11,23 @@ export default defineNuxtConfig({
   modules: [
     '@vite-pwa/nuxt',
     '@vueuse/nuxt',
+    '../src/module.ts'
   ],
+  nitro: {
+    esbuild: {
+      options: {
+        target: 'esnext',
+      },
+    },
+    prerender: {
+      routes: ['/', '/about'],
+    },
+  },
+  imports: {
+    autoImport: true,
+  },
   pwa: {
+    registerType: 'autoUpdate',
     manifest: {
       name: "Nuxt3 PWA",
       short_name: "Nuxt3 PWA",
@@ -41,11 +56,18 @@ export default defineNuxtConfig({
       ],
     },
     workbox: {
-      navigateFallback: "/",
+      navigateFallback: '/',
+      globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
+    },
+    client: {
+      installPrompt: true,
+      periodicSyncForUpdates: 20,
     },
     devOptions: {
       enabled: true,
-      type: "module",
+      suppressWarnings: true,
+      navigateFallbackAllowlist: [/^\/$/],
+      type: 'module',
     },
   },
 });

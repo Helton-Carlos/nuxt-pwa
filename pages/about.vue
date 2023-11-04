@@ -43,7 +43,7 @@ function onScan(decodedText: string, decodedResult: any | undefined) {
       Abrir camera
     </button>
 
-    <QRCodeScanner v-if="openScanner" style="width: 500px" @result="onScan" />
+    <QRCodeScanner v-if="openScanner" class="w-full" @result="onScan" />
 
     {{ scan }}
 
