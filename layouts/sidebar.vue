@@ -2,6 +2,7 @@
 const router = [
   { name: 'home', path: '/' },
   { name: 'about', path: '/about' },
+  { name: 'recurse', path: '/recurse' },
   { name: 'login', path: '/login' },
 ];
 </script>
