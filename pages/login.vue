@@ -15,14 +15,16 @@ function login() {
     const user = [{ name, password, email }];
 
     const db = window.openDatabase(
-      'users-2',
+      'users-3',
       '1.0',
-      'users-2',
+      'users-3',
       1 * 1024 * 1024,
     );
 
     db.transaction(
-      (transaction) => {
+      (transaction: {
+        executeSql: (user: string, users: string[] | undefined) => void;
+      }) => {
         transaction.executeSql(
           'CREATE TABLE user (name TEXT,email TEXT, password TEXT)',
         );
@@ -33,7 +35,7 @@ function login() {
           );
         }
       },
-      (erro) => {
+      (erro: any) => {
         vibrate();
         console.error(erro);
       },
