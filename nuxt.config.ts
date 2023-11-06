@@ -11,8 +11,12 @@ export default defineNuxtConfig({
   modules: [
     '@vite-pwa/nuxt',
     '@vueuse/nuxt',
+    '@pinia/nuxt',
     '../src/module.ts'
   ],
+  pinia: {
+    storesDirs: ['./stores/**', './custom-folder/stores/**'],
+  },
   nitro: {
     esbuild: {
       options: {

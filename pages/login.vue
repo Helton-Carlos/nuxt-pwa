@@ -1,7 +1,10 @@
 <script lang="ts" setup>
 import { useVibrate } from '@vueuse/core';
+import { useUserStore } from '../store/index';
 
 const { vibrate, stop, isSupported } = useVibrate({ pattern: [300, 100, 300] });
+
+const { signIn } = useUserStore();
 
 const user = ref({
   name: '',
@@ -9,9 +12,11 @@ const user = ref({
   email: '',
 });
 
-function login() {
+async function login() {
   const { name, password, email } = user.value;
   if (name && password && email) {
+    await signIn(name, password, email);
+
     const user = [{ name, password, email }];
 
     const db = window.openDatabase(
@@ -88,3 +93,4 @@ function login() {
     </div>
   </div>
 </template>
+../store
