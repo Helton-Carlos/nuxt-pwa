@@ -1,5 +1,22 @@
 <script lang="ts" setup>
+import { onMounted } from 'vue';
 const authenticated = true;
+
+onMounted(() => {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('/sw.ts')
+      .then((registration) => {
+        console.log(
+          'Service Worker registrado com escopo:',
+          registration.scope,
+        );
+      })
+      .catch((error) => {
+        console.error('Falha no registro do Service Worker:', error);
+      });
+  }
+});
 </script>
 <template>
   <div>
