@@ -1,5 +1,5 @@
 import carrinho from '~/assets/products/carrinho.jpg';
-import ursinho from '~/assets/products/ursinho.jpg';
+import cursoDesenho from '~/assets/products/curso-desenho.jpg';
 import panelas from '~/assets/products/panelas.jpg';
 import piscina from '~/assets/products/piscina.jpg';
 import planta from '~/assets/products/planta.jpg';
@@ -13,10 +13,10 @@ export const getProducts = [
     image: carrinho,
   },
   {
-    title: 'ursinho',
+    title: 'curso-desenho',
     point: 50,
-    description: 'Meu Leaozinho, Buba, Caramelo',
-    image: ursinho,
+    description: 'Curso desenho, aprenda em 3 meses.',
+    image: cursoDesenho,
   },
   {
     title: 'panelas',

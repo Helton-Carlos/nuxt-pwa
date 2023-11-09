@@ -1,7 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>
-    <di></di>
-  </div>
+  <div></div>
 </template>

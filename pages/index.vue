@@ -9,14 +9,17 @@ import Card from '~/component/Card.vue';
 
     <div class="flex flex-col gap-4">
       <p class="font-bold text-base">Produtos</p>
-      <Card
-        v-for="(message, title) in getProducts"
-        :key="title"
-        :image="message.image"
-        :point="message.point"
-        :title="message.title"
-        :description="message.description"
-      />
+
+      <div class="flex justify-between flex-wrap gap-5">
+        <Card
+          v-for="(message, title) in getProducts"
+          :key="title"
+          :image="message.image"
+          :point="message.point"
+          :title="message.title"
+          :description="message.description"
+        />
+      </div>
     </div>
   </div>
 </template>

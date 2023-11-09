@@ -18,11 +18,11 @@ body {
 }
 
 .img-product {
-  @apply h-[100px];
+  @apply w-[120px] md:h-[100px];
 }
 
 .card {
-  @apply bg-white rounded-lg p-4 px-5 shadow-lg;
+  @apply bg-white rounded-lg p-4 px-5 shadow-lg md:max-w-[480px];
 }
 
 .input-base {
