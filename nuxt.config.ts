@@ -1,18 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  build: {
-    extend(config: { isClient: any; module: { rules: { enforce: string; test: RegExp; loader: string; options: { src: string; }; }[]; }; }) {
-      if (config.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\/worker\.js$/,
-          loader: 'service-worker-loader',
-          options: { src: './sw.ts' }
-        });
-      }
-    }
-  },
   postcss: {
     plugins: {
       tailwindcss: {},

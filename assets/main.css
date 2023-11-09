@@ -14,7 +14,7 @@ body {
 }
 
 .btn {
-  @apply bg-primary text-white px-5 py-2 m-2 rounded-md;
+  @apply w-full bg-primary text-white px-5 py-2 my-2 rounded-md;
 }
 
 .img-product {
@@ -23,4 +23,8 @@ body {
 
 .card {
   @apply bg-white rounded-lg p-4 px-5 shadow-lg;
+}
+
+.input-base {
+  @apply shadow appearance-none border my-2 rounded w-full py-2 px-3 text-gray leading-tight focus:outline-none focus:shadow;
 }

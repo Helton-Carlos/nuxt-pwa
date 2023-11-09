@@ -1,8 +1,8 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import { useVibrate } from '@vueuse/core';
 import { useUserStore } from '../store/index';
 
-const { vibrate, stop, isSupported } = useVibrate({ pattern: [300, 100, 300] });
+const { vibrate, stop } = useVibrate({ pattern: [300, 100, 300] });
 
 const { signIn } = useUserStore();
 
@@ -32,6 +32,7 @@ async function login() {
       }) => {
         transaction.executeSql(
           'CREATE TABLE user (name TEXT,email TEXT, password TEXT)',
+          [],
         );
         for (let g of user) {
           transaction.executeSql(
@@ -63,7 +64,7 @@ async function login() {
       <input
         v-model="user.name"
         type="text"
-        class="m-2 bg-white border-none p-2"
+        class="input-base"
         placeholder="Enter Username"
         name="uname"
         required
@@ -73,7 +74,7 @@ async function login() {
       <input
         v-model="user.email"
         type="email"
-        class="m-2 bg-white border-none p-2"
+        class="input-base"
         placeholder="Enter Username"
         name="email"
         required
@@ -83,7 +84,7 @@ async function login() {
       <input
         v-model="user.password"
         type="password"
-        class="m-2 bg-white border-none p-2"
+        class="input-base"
         placeholder="Enter Password"
         name="psw"
         required
@@ -93,4 +94,3 @@ async function login() {
     </div>
   </div>
 </template>
-../store
