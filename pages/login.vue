@@ -6,6 +6,8 @@ const { vibrate, stop } = useVibrate({ pattern: [300, 100, 300] });
 
 const { signIn } = useUserStore();
 
+const alert = ref<string>('');
+
 const user = ref({
   name: '',
   password: '',
@@ -46,6 +48,8 @@ async function login() {
         console.error(erro);
       },
     );
+  } else {
+    alert.value = '*Preencha os campos.';
   }
 
   setTimeout(() => {
@@ -55,7 +59,7 @@ async function login() {
 </script>
 
 <template>
-  <div>
+  <div class="w-full bg-gray-base p-4 mx-auto my-8 md:w-[450px]">
     <div class="title">
       <h2 class="font-semibold text-xl">Login</h2>
     </div>
@@ -91,6 +95,8 @@ async function login() {
       />
 
       <button @click.prevent="login" class="btn">Login</button>
+
+      <small>{{ alert }}</small>
     </div>
   </div>
 </template>

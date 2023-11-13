@@ -14,7 +14,8 @@ body {
 }
 
 .btn {
-  @apply w-full bg-primary text-white px-5 py-2 my-2 rounded-md;
+  @apply w-full bg-primary text-white px-5 py-2 my-2 rounded-md
+    hover:bg-secondary;
 }
 
 .img-product {
