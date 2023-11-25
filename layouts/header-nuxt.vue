@@ -1,5 +1,16 @@
 <script lang="ts" setup>
 import sidebar from './sidebar.vue';
+import { breakpoints } from '~/utilities/useBreakpoints';
+
+const { xs, sm, lg } = breakpoints();
+
+const router = [
+  { name: 'home', path: '/' },
+  { name: 'about', path: '/about' },
+  { name: 'recurse', path: '/recurse' },
+  { name: 'login', path: '/login' },
+];
+
 const menu = ref<boolean>(false);
 
 function openMenu() {
@@ -19,14 +30,30 @@ function openMenu() {
         </nuxt-link>
 
         <div class="flex items-center gap-2">
+          <ul v-if="lg" class="flex items-center gap-8 text-center">
+            <li
+              v-for="(routes, index) in router"
+              :key="index"
+              class="flex font-semibold capitalize gap-2 text-gray hover:text-primary"
+            >
+              <nuxt-link :to="routes.path">{{ routes.name }}</nuxt-link>
+            </li>
+          </ul>
+          <span v-if="lg">|</span>
           <img src="../assets/icons/notification.png" alt="notification" />
-          <img src="../assets/icons/menu.png" alt="menu" @click="openMenu" />
+
+          <img
+            src="../assets/icons/menu.png"
+            alt="menu"
+            v-if="xs || sm"
+            @click="openMenu"
+          />
         </div>
       </div>
     </header>
 
     <div>
-      <sidebar v-if="menu" @click="openMenu" />
+      <sidebar v-if="(xs || sm) && menu" @click="openMenu" />
     </div>
   </div>
 </template>
