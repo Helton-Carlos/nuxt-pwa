@@ -20,9 +20,11 @@ const router = [
         <li
           v-for="(routes, index) in router"
           :key="index"
-          class="font-semibold capitalize p-2 gap-4 text-gray hover:text-primary"
+          class="font-semibold capitalize gap-4 py-3 text-gray hover:text-primary"
         >
-          <nuxt-link :to="routes.path">{{ routes.name }}</nuxt-link>
+          <nuxt-link :to="routes.path" class="py-3 px-4">{{
+            routes.name
+          }}</nuxt-link>
         </li>
       </ul>
     </div>
