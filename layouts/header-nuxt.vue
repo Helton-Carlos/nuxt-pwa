@@ -39,8 +39,20 @@ function openMenu() {
               <nuxt-link :to="routes.path">{{ routes.name }}</nuxt-link>
             </li>
           </ul>
-          <span v-if="lg">|</span>
-          <img src="../assets/icons/notification.png" alt="notification" />
+
+          <div class="flex items-center gap-2">
+            <img src="../assets/icons/user.svg" alt="user" />
+            <span>|</span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <img src="../assets/icons/card.svg" alt="card" />
+          </div>
+
+          <div class="flex items-center gap-2" v-show="false">
+            <span>|</span>
+            <img src="../assets/icons/notification.png" alt="notification" />
+          </div>
 
           <img
             src="../assets/icons/menu.png"

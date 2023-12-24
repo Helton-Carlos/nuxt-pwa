@@ -5,7 +5,7 @@ import piscina from '~/assets/products/piscina.jpg';
 import planta from '~/assets/products/planta.jpg';
 import potes from '~/assets/products/potes.jpg';
 
-export const getProducts = [
+export const products = [
   {
     title: 'carrinho',
     point: 2550,
