@@ -6,6 +6,14 @@ defineProps<{
   placeholder: string;
   name: string;
 }>();
+
+const emit = defineEmits<{
+  (e: 'update:modelValue', id: string | number): void;
+}>();
+
+function updateInput(event: any) {
+  emit('update:modelValue', event.target.value);
+}
 </script>
 
 <template>
@@ -18,6 +26,7 @@ defineProps<{
       :type="type"
       :placeholder="placeholder"
       :name="name"
+      @input="updateInput"
       required
     />
   </div>

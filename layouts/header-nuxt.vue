@@ -49,11 +49,6 @@ function openMenu() {
             <img src="../assets/icons/card.svg" alt="card" />
           </div>
 
-          <div class="flex items-center gap-2" v-show="false">
-            <span>|</span>
-            <img src="../assets/icons/notification.png" alt="notification" />
-          </div>
-
           <img
             src="../assets/icons/menu.png"
             alt="menu"

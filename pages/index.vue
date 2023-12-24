@@ -8,12 +8,18 @@ const { xs, sm } = breakpoints();
 
 const text = ref<string>('');
 
-function getProducts() {
-  alert(text.value);
+function search() {
+  let title = products.map((item) => item.title);
+
+  return title.filter((item) =>
+    item.toLowerCase().includes(text.value.toLowerCase()),
+  );
 }
 
-const search = computed(() => {
-  return text.value ? true : false;
+const getProducts = computed<any>(() => {
+  return search().map((searchs: any) => {
+    return products.find((name: any) => name.title === searchs);
+  });
 });
 </script>
 
@@ -39,13 +45,14 @@ const search = computed(() => {
         type="text"
         placeholder="O que você procura? ex: produtos"
         name="input-name"
+        @update:model-value="search"
       />
 
       <p class="font-bold text-base">Produtos</p>
 
       <div class="flex justify-between flex-wrap gap-5">
         <Card
-          v-for="(message, title) in products"
+          v-for="(message, title) in getProducts"
           :key="title"
           :image="message.image"
           :point="message.point"
