@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { products } from '~/utilities/product';
+import { highlights } from '~/utilities/highlights';
 import { breakpoints } from '~/utilities/useBreakpoints';
 import Card from '~/component/Card.vue';
 import InputNuxt from '~/component/InputNuxt.vue';
+import CircuProduct from '~/component/CircuProduct.vue';
 
 const { xs, sm } = breakpoints();
 
@@ -48,6 +50,14 @@ const getProducts = computed<any>(() => {
         @update:model-value="search"
       />
 
+      <div class="flex gap-4 justify-between">
+        <CircuProduct
+          v-for="highlight in highlights"
+          :key="highlight.nameTypes"
+          :image="highlight.image"
+          :nameTypes="highlight.nameTypes"
+        />
+      </div>
       <p class="font-bold text-base">Produtos</p>
 
       <div class="flex justify-between flex-wrap gap-5">
