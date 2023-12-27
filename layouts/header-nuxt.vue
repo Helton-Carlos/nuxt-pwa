@@ -41,7 +41,9 @@ function openMenu() {
           </ul>
 
           <div class="flex items-center gap-2">
-            <img src="../assets/icons/user.svg" alt="user" />
+            <nuxt-link to="/login">
+              <img src="../assets/icons/user.svg" alt="user" />
+            </nuxt-link>
             <span>|</span>
           </div>
 

@@ -7,9 +7,7 @@ defineProps<{
   name: string;
 }>();
 
-const emit = defineEmits<{
-  (e: 'update:modelValue', id: string | number): void;
-}>();
+const emit = defineEmits<(e: 'update:modelValue', id: string | number) => void>();
 
 function updateInput(event: any) {
   emit('update:modelValue', event.target.value);

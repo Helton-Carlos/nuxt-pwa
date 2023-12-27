@@ -10,17 +10,24 @@ const { xs, sm } = breakpoints();
 
 const text = ref<string>('');
 
+function onProduct(categories: string) {
+  alert(categories)
+}
+
 function search() {
   let title = products.map((item) => item.title);
 
   return title.filter((item) =>
-    item.toLowerCase().includes(text.value.toLowerCase()),
+    item.toLowerCase()
+      .includes(text.value.toLowerCase()),
   );
 }
 
 const getProducts = computed<any>(() => {
   return search().map((searchs: any) => {
-    return products.find((name: any) => name.title === searchs);
+    return products.find(
+      (name: any) => name.title === searchs
+    );
   });
 });
 </script>
@@ -52,12 +59,14 @@ const getProducts = computed<any>(() => {
 
       <div class="flex gap-4 justify-between">
         <CircuProduct
-          v-for="highlight in highlights"
+          v-for="(highlight, index) in highlights"
           :key="highlight.nameTypes"
           :image="highlight.image"
           :nameTypes="highlight.nameTypes"
+          @onProduct="onProduct(highlight.nameTypes)"
         />
       </div>
+
       <p class="font-bold text-base">Produtos</p>
 
       <div class="flex justify-between flex-wrap gap-5">
