@@ -59,7 +59,7 @@ const getProducts = computed<any>(() => {
 
       <div class="flex gap-4 justify-between">
         <CircuProduct
-          v-for="(highlight, index) in highlights"
+          v-for="highlight in highlights"
           :key="highlight.nameTypes"
           :image="highlight.image"
           :nameTypes="highlight.nameTypes"
@@ -77,6 +77,7 @@ const getProducts = computed<any>(() => {
           :point="message.point"
           :title="message.title"
           :description="message.description"
+          :categories="message.categories"
         />
       </div>
     </div>

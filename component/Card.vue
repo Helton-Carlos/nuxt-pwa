@@ -6,6 +6,7 @@ defineProps<{
   title: string;
   point: number;
   description: string;
+  categories: string
 }>();
 
 const voice = ref<SpeechSynthesisVoice>(
@@ -79,8 +80,9 @@ const rotateChevron = computed(() => {
       </div>
     </div>
 
-    <ul v-if="showDescription" class="pl-10 pt-5 text-sm">
+    <ul v-if="showDescription" class="pl-10 pt-5 text-sm capitalize">
       <li>- {{ description }}</li>
+      <li>- {{ categories }}</li>
     </ul>
   </div>
 </template>
