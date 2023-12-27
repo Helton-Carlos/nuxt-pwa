@@ -17,3 +17,5 @@ yarn
 ```bash
 yarn dev
 ```
+
+![Mask group](https://github.com/Helton-Carlos/nuxt-pwa/assets/89320183/d37d848d-a625-442d-91f3-f3bfc83ee9b1)
