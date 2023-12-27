@@ -24,8 +24,8 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.5.1",
+    "html5-qrcode": "^2.3.8",
     "idb": "^7.1.1",
-    "pinia": "^2.1.7",
-    "vue3-qr-reader": "^1.0.0"
+    "pinia": "^2.1.7"
   }
 }

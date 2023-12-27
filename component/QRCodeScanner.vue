@@ -1,18 +1,28 @@
 <script setup lang="ts">
-import { defineEmits } from 'vue';
-import { QrStream } from 'vue3-qr-reader';
+import { onMounted, defineEmits } from 'vue';
+import { Html5QrcodeScanner } from 'html5-qrcode';
 
 const emit = defineEmits();
 
-function onDecode(data: any) {
-  emit('result', data);
+const config = {
+  fps: 20,
+  qrbox: 250,
+};
+function onScanSuccess(decodedText: string, decodedResult: any | undefined) {
+  emit('result', decodedText, decodedResult);
 }
+
+onMounted(() => {
+  const html5QrcodeScanner = new Html5QrcodeScanner(
+    'qr-code-full-region',
+    config,
+  );
+  html5QrcodeScanner.render(onScanSuccess);
+});
 </script>
 
 <template>
   <div>
-    <qr-stream @decode="onDecode" class="w-full">
-      <div style="color: red" class="frame"></div>
-    </qr-stream>
+    <div id="qr-code-full-region"></div>
   </div>
 </template>

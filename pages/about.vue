@@ -8,7 +8,7 @@ const voice = ref<SpeechSynthesisVoice>(
 );
 const text = ref<string>('Nuxt Voucher');
 const openScanner = ref<boolean>(false);
-const scan = ref<string>('');
+const scan = ref<any>({});
 
 const speech = useSpeechSynthesis(text, {
   lang: 'pt-BR',
@@ -22,8 +22,15 @@ function play() {
   speech.speak();
 }
 
-function result(data: string) {
-  scan.value = data;
+function onScan(decodedText: string, decodedResult: any | undefined) {
+  if (scan.value.decodedText) {
+    return false;
+  } else {
+    scan.value = {
+      decodedText,
+      decodedResult,
+    };
+  }
 }
 </script>
 
@@ -36,7 +43,7 @@ function result(data: string) {
       Abrir camera
     </button>
 
-    <QRCodeScanner @result="result" v-if="openScanner" />
+    <QRCodeScanner v-if="openScanner" class="w-full" @result="onScan" />
 
     <p>{{ scan }}</p>
 
