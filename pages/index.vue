@@ -57,7 +57,10 @@ const getProducts = computed<any>(() => {
         @update:model-value="search"
       />
 
-      <div class="flex gap-4 justify-between">
+      <div 
+        class="flex gap-4 justify-between"
+        :class=" xs || sm ? 'w-full' : 'w-2/4 mx-auto'"
+      >
         <CircuProduct
           v-for="highlight in highlights"
           :key="highlight.nameTypes"
