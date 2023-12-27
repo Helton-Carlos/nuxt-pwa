@@ -24,8 +24,10 @@ const speech = useSpeechSynthesis(text, {
   voice,
 });
 
-function play(title: string, info: string, point: number, description: string) {
-  const desc = showDescription.value ? description : '';
+function play(
+  title: string, info: string, point: number, description: string, categories: string
+) {
+  const desc = showDescription.value ? description + 'categoria' + categories: '';
   text.value = title + info + point + 'pontos' + desc;
 
   speech.speak();
@@ -67,7 +69,7 @@ const rotateChevron = computed(() => {
           class="cursor-pointer"
           src="~/assets/icons/audio.svg"
           alt="audio"
-          @click="play(title, info, point, description)"
+          @click="play(title, info, point, description, categories)"
         />
 
         <img

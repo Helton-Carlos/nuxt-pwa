@@ -8,7 +8,7 @@ import potes from '~/assets/products/potes.jpg';
 export const products = [
   {
     title: 'carrinho',
-    categories: 'presente',
+    categories: 'presentes',
     point: 2550,
     description: 'Veículo Elétrico Mercedez Bens, Branco',
     image: carrinho,
@@ -22,28 +22,28 @@ export const products = [
   },
   {
     title: 'panelas',
-    categories: 'presente',
+    categories: 'presentes',
     point: 1208,
     description: 'Jogo de Panelas Tramontina Antiaderente Turim 7 Pç Vermelho',
     image: panelas,
   },
   {
     title: 'piscina',
-    categories: 'presente',
+    categories: 'presentes',
     point: 1100,
     description: 'Piscina Chafariz Infantil 170cm Splash Sprinkler Pad',
     image: piscina,
   },
   {
     title: 'planta',
-    categories: 'presente',
+    categories: 'presentes',
     point: 1800,
     description: 'Peças de plantas artificiais penduradas, plantas artificiais penduradas de 90 cm',
     image: planta,
   },
   {
     title: 'potes',
-    categories: 'presente',
+    categories: 'presentes',
     point: 500,
     description: 'kit 10 Potes de Vidro Redondo 250ML com Tampa de Bambu - Oikos',
     image: potes,

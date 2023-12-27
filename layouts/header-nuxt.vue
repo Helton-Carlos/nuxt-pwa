@@ -52,9 +52,9 @@ function openMenu() {
           </div>
 
           <img
+            v-if="xs || sm"
             src="../assets/icons/menu.png"
             alt="menu"
-            v-if="xs || sm"
             @click="openMenu"
           />
         </div>
