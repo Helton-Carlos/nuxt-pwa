@@ -11,7 +11,7 @@ const { xs, sm } = breakpoints();
 const text = ref<string>('');
 
 function onProduct(categories: string) {
-  alert(categories)
+  navigateTo(`/products/${ categories }`)
 }
 
 function search() {
@@ -24,7 +24,7 @@ function search() {
 }
 
 const getProducts = computed<any>(() => {
-  return search().map((searchs: any) => {
+  return search().map((searchs: string) => {
     return products.find(
       (name: any) => name.title === searchs
     );

@@ -15,7 +15,7 @@ export const products = [
   },
   {
     title: 'curso-desenho',
-    categories: 'informatica',
+    categories: 'informática',
     point: 50,
     description: 'Curso desenho, aprenda em 3 meses.',
     image: cursoDesenho,

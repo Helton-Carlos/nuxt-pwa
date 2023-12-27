@@ -9,7 +9,7 @@ export const highlights = [
     image: bebidas,
   },
   {
-    nameTypes: 'informatica',
+    nameTypes: 'informática',
     image: informatica,
   },
   {

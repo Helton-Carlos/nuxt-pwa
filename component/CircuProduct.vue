@@ -18,6 +18,7 @@ defineEmits<(e: 'onProduct') => void>();
         :alt="nameTypes"
         class="mx-auto mb-4 rounded-full w-24 h-24 cursor-pointer"
       />
+      
       <p class="text-lg font-semibold text-gray capitalize py-1">
         {{ nameTypes }}
       </p>
