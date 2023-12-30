@@ -6,7 +6,7 @@ defineProps<{
   title: string;
   point: number;
   description: string;
-  categories: string
+  categories: string;
 }>();
 
 const voice = ref<SpeechSynthesisVoice>(
@@ -25,9 +25,15 @@ const speech = useSpeechSynthesis(text, {
 });
 
 function play(
-  title: string, info: string, point: number, description: string, categories: string
+  title: string,
+  info: string,
+  point: number,
+  description: string,
+  categories: string,
 ) {
-  const desc = showDescription.value ? description + 'categoria' + categories: '';
+  const desc = showDescription.value
+    ? description + 'categoria' + categories
+    : '';
   text.value = title + info + point + 'pontos' + desc;
 
   speech.speak();
@@ -52,11 +58,11 @@ const rotateChevron = computed(() => {
         </div>
 
         <div class="pl-4">
-          <p class="font-bold capitalize">
+          <p class="font-bold capitalize underline">
             {{ title }}
           </p>
 
-          <p class="font-normal text-xs">
+          <p class="font-normal text-sm">
             {{ info }}
           </p>
 

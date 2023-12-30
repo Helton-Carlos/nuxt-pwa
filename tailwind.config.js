@@ -25,8 +25,8 @@ export default {
       xl: '1440px',
     },
     fontSize: {
-      sm: '0.87rem',
-      base: '1.1rem',
+      sm: '0.5rem',
+      base: '1.0rem',
       xl: '1.4rem',
       '2xl': '1.7rem',
       '3xl': '2rem',
