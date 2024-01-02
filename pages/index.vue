@@ -6,28 +6,39 @@ import Card from '~/component/Card.vue';
 import InputNuxt from '~/component/InputNuxt.vue';
 import CircuProduct from '~/component/CircuProduct.vue';
 
-const { xs, sm } = breakpoints();
+interface IProduct {
+  id: number;
+  title: string;
+  categories: string;
+  point: number;
+  description: string;
+  image: string;
+}
 
+const { xs, sm } = breakpoints();
 const text = ref<string>('');
 
 function onProduct(categories: string) {
-  navigateTo(`/products/${ categories }`)
+  navigateTo(`/products/${categories}`);
+}
+
+function buy(message: IProduct) {
+  navigateTo(
+    `/buy/${message.categories + '-' + message.title + '-' + message.id}`,
+  );
 }
 
 function search() {
   let title = products.map((item) => item.title);
 
   return title.filter((item) =>
-    item.toLowerCase()
-      .includes(text.value.toLowerCase()),
+    item.toLowerCase().includes(text.value.toLowerCase()),
   );
 }
 
 const getProducts = computed<any>(() => {
   return search().map((searchs: string) => {
-    return products.find(
-      (name: any) => name.title === searchs
-    );
+    return products.find((name: any) => name.title === searchs);
   });
 });
 </script>
@@ -57,9 +68,9 @@ const getProducts = computed<any>(() => {
         @update:model-value="search"
       />
 
-      <div 
+      <div
         class="flex gap-4 justify-between"
-        :class=" xs || sm ? 'w-full' : 'w-2/4 mx-auto'"
+        :class="xs || sm ? 'w-full' : 'w-2/4 mx-auto'"
       >
         <CircuProduct
           v-for="highlight in highlights"
@@ -81,6 +92,7 @@ const getProducts = computed<any>(() => {
           :title="message.title"
           :description="message.description"
           :categories="message.categories"
+          @buy="buy(message)"
         />
       </div>
     </div>

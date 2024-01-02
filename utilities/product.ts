@@ -10,6 +10,7 @@ import parafusadeira from '~/assets/products/parafusadeira.jpg';
 
 export const products = [
   {
+    id: 1,
     title: 'carrinho',
     categories: 'presentes',
     point: 2550,
@@ -17,6 +18,7 @@ export const products = [
     image: carrinho,
   },
   {
+    id: 2,
     title: 'curso-desenho',
     categories: 'informática',
     point: 50,
@@ -24,6 +26,7 @@ export const products = [
     image: cursoDesenho,
   },
   {
+    id: 3,
     title: 'salton',
     categories: 'bebidas',
     point: 370,
@@ -31,6 +34,7 @@ export const products = [
     image: salton,
   },
   {
+    id: 4,
     title: 'piscina',
     categories: 'presentes',
     point: 1100,
@@ -38,6 +42,7 @@ export const products = [
     image: piscina,
   },
   {
+    id: 5,
     title: 'licor',
     categories: 'bebidas',
     point: 170,
@@ -45,6 +50,7 @@ export const products = [
     image: licor,
   },
   {
+    id: 6,
     title: 'parafusadeira',
     categories: 'ferramentas',
     point: 880,
@@ -52,6 +58,7 @@ export const products = [
     image: parafusadeira,
   },
   {
+    id: 7,
     title: 'potes',
     categories: 'presentes',
     point: 250,
@@ -59,6 +66,7 @@ export const products = [
     image: potes,
   },
   {
+    id: 8,
     title: 'martelete',
     categories: 'ferramentas',
     point: 900,
@@ -66,6 +74,7 @@ export const products = [
     image: martelete,
   },
   {
+    id: 9,
     title: 'panelas',
     categories: 'ferramentas',
     point: 1208,

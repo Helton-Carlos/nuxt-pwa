@@ -8,7 +8,7 @@ import Footer from './layouts/footer-nuxt.vue';
     <VitePwaManifest />
     <Header />
     <div class="container">
-      <NuxtPage class="flex-1"></NuxtPage>
+      <NuxtPage class="flex-1" />
     </div>
     <Footer />
   </div>

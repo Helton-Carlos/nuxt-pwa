@@ -9,6 +9,8 @@ defineProps<{
   categories: string;
 }>();
 
+defineEmits<(e: 'buy') => void>();
+
 const voice = ref<SpeechSynthesisVoice>(
   undefined as unknown as SpeechSynthesisVoice,
 );
@@ -67,6 +69,8 @@ const rotateChevron = computed(() => {
           </p>
 
           <p class="font-bold text-xs">{{ point }} pontos.</p>
+
+          <button class="btn" @click="$emit('buy')">Comprar</button>
         </div>
       </div>
 
